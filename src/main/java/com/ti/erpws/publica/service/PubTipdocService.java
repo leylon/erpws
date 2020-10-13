@@ -42,7 +42,7 @@ public class PubTipdocService implements PublicaCrudMulti<PubTipdoc, EstadosResp
 		estado = new EstadosResponse();
 		try {
 
-			//repository.save(entities);
+			repository.saveAll(entities);
 			estado.setStatus("Success");
 			estado.setMensaje("Se Guardó Correctamente..!");
 		} catch (Exception e) {
@@ -61,7 +61,7 @@ public class PubTipdocService implements PublicaCrudMulti<PubTipdoc, EstadosResp
 		estado = new EstadosResponse();
 		try {
 
-			//repository.save(entities);
+			repository.saveAll(entities);
 			estado.setStatus("Success");
 			estado.setMensaje("Se Actualizó Correctamente..!");
 		} catch (Exception e) {
@@ -80,7 +80,7 @@ public class PubTipdocService implements PublicaCrudMulti<PubTipdoc, EstadosResp
 		estado = new EstadosResponse();
 		try {
 
-			//repository.delete(entities);
+			repository.deleteAll(entities);
 			estado.setStatus("Success");
 			estado.setMensaje("Se Eliminó Correctamente..!");
 		} catch (Exception e) {
