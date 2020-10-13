@@ -1,7 +1,4 @@
-/**
- * Codigo Autogenerado
- * @author Leylon Ocaña Sanchez
- */
+
 package com.ti.erpws.publica.controller;
 
 
@@ -10,6 +7,10 @@ import com.ti.erpws.publica.model.response.EstadosResponse;
 import com.ti.erpws.publica.model.response.PubTipdocVO;
 import com.ti.erpws.publica.service.PubTipdocService;
 import com.ti.erpws.publica.util.PublicaCrudMulti;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/api/webresources/publica/PubTipdoc/")
-//@Api(tags="publica-PubTipdoc")
+@Api(tags="publica-PubTipdoc")
 public class PubTipdocController implements PublicaCrudMulti<PubTipdocVO, EstadosResponse> {
 	
 	private static final Log logger = LogFactory.getLog(PubTipdocController.class);
@@ -38,8 +39,8 @@ public class PubTipdocController implements PublicaCrudMulti<PubTipdocVO, Estado
 	
 	@Override
 	@PostMapping("/CrearPubTipdoc")
-	//@ApiOperation(value="Crear PubTipdoc",notes="servicio para crear uno o varios registros de la tabla PubTipdoc")
-	//@ApiResponses(value= {@ApiResponse(code=200, message="El servicio respondio correctamente"),@ApiResponse(code=400, message="Solicitud Invalida")})
+	@ApiOperation(value="Crear PubTipdoc",notes="servicio para crear uno o varios registros de la tabla PubTipdoc")
+	@ApiResponses(value= {@ApiResponse(code=200, message="El servicio respondio correctamente"),@ApiResponse(code=400, message="Solicitud Invalida")})
 	public EstadosResponse crear(@RequestBody List<PubTipdocVO> entities) {
 		// TODO Auto-generated method stub
 		List<PubTipdoc> data=new ArrayList<>();
@@ -49,8 +50,8 @@ public class PubTipdocController implements PublicaCrudMulti<PubTipdocVO, Estado
 
 	@Override
 	@PostMapping("/ActualizarPubTipdoc")
-	//@ApiOperation(value="Actualizar PubTipdoc",notes="servicio para Actualizar uno o varios registros de la tabla PubTipdoc")
-	//@ApiResponses(value= {@ApiResponse(code=200, message="El servicio respondio correctamente"),@ApiResponse(code=400, message="Solicitud Invalida")})
+	@ApiOperation(value="Actualizar PubTipdoc",notes="servicio para Actualizar uno o varios registros de la tabla PubTipdoc")
+	@ApiResponses(value= {@ApiResponse(code=200, message="El servicio respondio correctamente"),@ApiResponse(code=400, message="Solicitud Invalida")})
 	public EstadosResponse actualizar(@RequestBody List<PubTipdocVO> entities) {
 		// TODO Auto-generated method stub
 		List<PubTipdoc> data=new ArrayList<>();
@@ -60,8 +61,8 @@ public class PubTipdocController implements PublicaCrudMulti<PubTipdocVO, Estado
 
 	@Override
 	@PostMapping("/EliminarPubTipdoc")
-	//@ApiOperation(value="Eliminar PubTipdoc",notes="servicio para Eliminar uno o varios registros de la tabla PubTipdoc")
-	//@ApiResponses(value= {@ApiResponse(code=200, message="El servicio respondio correctamente"),@ApiResponse(code=400, message="Solicitud Invalida")})
+	@ApiOperation(value="Eliminar PubTipdoc",notes="servicio para Eliminar uno o varios registros de la tabla PubTipdoc")
+	@ApiResponses(value= {@ApiResponse(code=200, message="El servicio respondio correctamente"),@ApiResponse(code=400, message="Solicitud Invalida")})
 	public EstadosResponse borrar(@RequestBody List<PubTipdocVO> entities) {
 		// TODO Auto-generated method stub
 		List<PubTipdoc> data=new ArrayList<>();
@@ -71,8 +72,8 @@ public class PubTipdocController implements PublicaCrudMulti<PubTipdocVO, Estado
 
 	@Override
 	@GetMapping("/ListarPubTipdoc")
-	//@ApiOperation(value="Listar PubTipdoc",notes="servicio para Listar todos los registro de la tablaPubTipdoc")
-	//@ApiResponses(value= {@ApiResponse(code=200, message="El servicio respondio correctamente"),@ApiResponse(code=400, message="Solicitud Invalida")})
+	@ApiOperation(value="Listar PubTipdoc",notes="servicio para Listar todos los registro de la tablaPubTipdoc")
+	@ApiResponses(value= {@ApiResponse(code=200, message="El servicio respondio correctamente"),@ApiResponse(code=400, message="Solicitud Invalida")})
 	public List<PubTipdocVO> listartodo() {
 		// TODO Auto-generated method stub
 		List<PubTipdocVO> data=new ArrayList<>();
