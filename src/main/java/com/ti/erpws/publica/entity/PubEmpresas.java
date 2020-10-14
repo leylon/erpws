@@ -196,7 +196,7 @@ public class PubEmpresas implements Serializable {
     private List<LogCatalogo> logCatalogoList;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idPubEmpresas")
-    private List<LogTipoCatalogo> logTipoCatalogoList;*/
+    private List<LogTipoCatalogoRepository> logTipoCatalogoList;*/
 
     public PubEmpresas() {
     }
@@ -743,11 +743,11 @@ public class PubEmpresas implements Serializable {
         this.logCatalogoList = logCatalogoList;
     }
 
-    public List<LogTipoCatalogo> getLogTipoCatalogoList() {
+    public List<LogTipoCatalogoRepository> getLogTipoCatalogoList() {
         return logTipoCatalogoList;
     }
 
-    public void setLogTipoCatalogoList(List<LogTipoCatalogo> logTipoCatalogoList) {
+    public void setLogTipoCatalogoList(List<LogTipoCatalogoRepository> logTipoCatalogoList) {
         this.logTipoCatalogoList = logTipoCatalogoList;
     }*/
 }

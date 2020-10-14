@@ -12,26 +12,15 @@ import com.ti.erpws.logistica.model.response.LogTipoCatalogoVO;
 import javax.persistence.*;
 
 import java.io.Serializable;
-import java.util.List;
 
 /**
- *
  * @author Leylon Ocaña Sanchez
  */
 @Entity
 @Table(name = "log_tipo_catalogo")
 @NamedQueries({
-    @NamedQuery(name = "LogTipoCatalogo.findAll", query = "SELECT l FROM LogTipoCatalogo l")
-    , @NamedQuery(name = "LogTipoCatalogo.findByIdLogTipoCatalogo", query = "SELECT l FROM LogTipoCatalogo l WHERE l.idLogTipoCatalogo = :idLogTipoCatalogo")
-    , @NamedQuery(name = "LogTipoCatalogo.findByEmpresa", query = "SELECT l FROM LogTipoCatalogo l WHERE l.empresa = :empresa")
-    , @NamedQuery(name = "LogTipoCatalogo.findByTipoCatalogo", query = "SELECT l FROM LogTipoCatalogo l WHERE l.tipoCatalogo = :tipoCatalogo")
-    , @NamedQuery(name = "LogTipoCatalogo.findByDescripcion", query = "SELECT l FROM LogTipoCatalogo l WHERE l.descripcion = :descripcion")
-    , @NamedQuery(name = "LogTipoCatalogo.findByCatalogoPadre", query = "SELECT l FROM LogTipoCatalogo l WHERE l.catalogoPadre = :catalogoPadre")
-    , @NamedQuery(name = "LogTipoCatalogo.findByNivel", query = "SELECT l FROM LogTipoCatalogo l WHERE l.nivel = :nivel")
-    , @NamedQuery(name = "LogTipoCatalogo.findByFlagAlmacen", query = "SELECT l FROM LogTipoCatalogo l WHERE l.flagAlmacen = :flagAlmacen")
-    , @NamedQuery(name = "LogTipoCatalogo.findByFlagProvisiona", query = "SELECT l FROM LogTipoCatalogo l WHERE l.flagProvisiona = :flagProvisiona")
-    , @NamedQuery(name = "LogTipoCatalogo.findByCodCta", query = "SELECT l FROM LogTipoCatalogo l WHERE l.codCta = :codCta")
-    , @NamedQuery(name = "LogTipoCatalogo.findByCodFamilia", query = "SELECT l FROM LogTipoCatalogo l WHERE l.codFamilia = :codFamilia")})
+        @NamedQuery(name = "LogTipoCatalogo.findAll", query = "SELECT l FROM LogTipoCatalogo l")
+})
 public class LogTipoCatalogo implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -66,21 +55,21 @@ public class LogTipoCatalogo implements Serializable {
 
     public LogTipoCatalogo() {
     }
-    
+
     public LogTipoCatalogo(LogTipoCatalogoVO data) {
-   	 
-	    this.idLogTipoCatalogo = data.getIdLogTipoCatalogo();
-	    this.empresa = data.getEmpresa();
-	    this.tipoCatalogo = data.getTipoCatalogo();
-	    this.descripcion = data.getDescripcion();
-	    this.catalogoPadre = data.getCatalogoPadre();
-	    this.nivel = data.getNivel();
-	    this.flagAlmacen = data.getFlagAlmacen();
-	    this.flagProvisiona = data.getFlagProvisiona();
-	    this.codCta = data.getCodCta();
-	    this.codFamilia = data.getCodFamilia();
-	   // this.idPubEmpresas = new PubEmpresas(data.getIdPubEmpresas());
-	 
+
+        this.idLogTipoCatalogo = data.getIdLogTipoCatalogo();
+        this.empresa = data.getEmpresa();
+        this.tipoCatalogo = data.getTipoCatalogo();
+        this.descripcion = data.getDescripcion();
+        this.catalogoPadre = data.getCatalogoPadre();
+        this.nivel = data.getNivel();
+        this.flagAlmacen = data.getFlagAlmacen();
+        this.flagProvisiona = data.getFlagProvisiona();
+        this.codCta = data.getCodCta();
+        this.codFamilia = data.getCodFamilia();
+        // this.idPubEmpresas = new PubEmpresas(data.getIdPubEmpresas());
+
     }
 
     public LogTipoCatalogo(Long idLogTipoCatalogo) {
@@ -196,7 +185,7 @@ public class LogTipoCatalogo implements Serializable {
 
     @Override
     public String toString() {
-        return "pe.osf.siga.admin.entity.mapeo.LogTipoCatalogo[ idLogTipoCatalogo=" + idLogTipoCatalogo + " ]";
+        return "pe.osf.siga.admin.entity.mapeo.LogTipoCatalogoRepository[ idLogTipoCatalogo=" + idLogTipoCatalogo + " ]";
     }
-    
+
 }
