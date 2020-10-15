@@ -1,10 +1,12 @@
 package com.ti.erpws.logistica.entity;
 
 import com.ti.erpws.logistica.model.response.LogCatalogoVO;
+import com.ti.erpws.publica.entity.PubEmpresas;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "log_catalogo")
@@ -71,19 +73,19 @@ public class LogCatalogo implements Serializable {
     private String codFamilia;
     @Column(name = "tipo_articulo")
     private Integer tipoArticulo;
-    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "idLogCatalogo")
-    private List<LogRequerimientoDet> logRequerimientoDetList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idLogCatalogo")
-    private List<LogOrdenesDet> logOrdenesDetList;
-    @JoinColumn(name = "id_cos_familia_det_conceptos", referencedColumnName = "id_cos_familia_det_conceptos")
-    @ManyToOne
-    private CosFamiliaDetConceptos idCosFamiliaDetConceptos;
+    private List<LogRequerimientoDet> logRequerimientoDetList;
+    //@OneToMany(cascade = CascadeType.ALL, mappedBy = "idLogCatalogo")
+    //private List<LogOrdenesDet> logOrdenesDetList;
+    //@JoinColumn(name = "id_cos_familia_det_conceptos", referencedColumnName = "id_cos_familia_det_conceptos")
+    //@ManyToOne
+    //private CosFamiliaDetConceptos idCosFamiliaDetConceptos;
     @JoinColumn(name = "id_log_tipo_catalogo", referencedColumnName = "id_log_tipo_catalogo")
     @ManyToOne(optional = false)
     private LogTipoCatalogo idLogTipoCatalogo;
     @JoinColumn(name = "id_pub_empresas", referencedColumnName = "id_pub_empresas")
     @ManyToOne(optional = false)
-    private PubEmpresas idPubEmpresas;*/
+    private PubEmpresas idPubEmpresas;
 
     public LogCatalogo(LogCatalogoVO data) {
 
@@ -105,10 +107,14 @@ public class LogCatalogo implements Serializable {
         this.codConcepto = data.getCodConcepto();
         this.codFamilia = data.getCodFamilia();
         this.tipoArticulo = data.getTipoArticulo();
-        /*this.idCosFamiliaDetConceptos = new CosFamiliaDetConceptos(data.getIdCosFamiliaDetConceptos());
+        /*this.idCosFamiliaDetConceptos = new CosFamiliaDetConceptos(data.getIdCosFamiliaDetConceptos());*/
         this.idLogTipoCatalogo = new LogTipoCatalogo(data.getIdLogTipoCatalogo());
-        this.idPubEmpresas = new PubEmpresas(data.getIdPubEmpresas());*/
+        this.idPubEmpresas = new PubEmpresas(data.getIdPubEmpresas());
 
+    }
+
+    public LogCatalogo(Long idLogCatalogo) {
+        this.idLogCatalogo = idLogCatalogo;
     }
 
     public static long getSerialVersionUID() {
@@ -257,5 +263,29 @@ public class LogCatalogo implements Serializable {
 
     public void setTipoArticulo(Integer tipoArticulo) {
         this.tipoArticulo = tipoArticulo;
+    }
+
+    public List<LogRequerimientoDet> getLogRequerimientoDetList() {
+        return logRequerimientoDetList;
+    }
+
+    public void setLogRequerimientoDetList(List<LogRequerimientoDet> logRequerimientoDetList) {
+        this.logRequerimientoDetList = logRequerimientoDetList;
+    }
+
+    public LogTipoCatalogo getIdLogTipoCatalogo() {
+        return idLogTipoCatalogo;
+    }
+
+    public void setIdLogTipoCatalogo(LogTipoCatalogo idLogTipoCatalogo) {
+        this.idLogTipoCatalogo = idLogTipoCatalogo;
+    }
+
+    public PubEmpresas getIdPubEmpresas() {
+        return idPubEmpresas;
+    }
+
+    public void setIdPubEmpresas(PubEmpresas idPubEmpresas) {
+        this.idPubEmpresas = idPubEmpresas;
     }
 }

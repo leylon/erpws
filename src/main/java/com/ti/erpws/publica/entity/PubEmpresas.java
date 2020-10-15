@@ -201,6 +201,10 @@ public class PubEmpresas implements Serializable {
     public PubEmpresas() {
     }
 
+    public PubEmpresas(Long idPubEmpresas) {
+        this.idPubEmpresas = idPubEmpresas;
+    }
+
     public PubEmpresas(PubEmpresasVO pubEmpresasVO) {
         this.idPubEmpresas = pubEmpresasVO.getIdPubEmpresas();
         this.codemp = pubEmpresasVO.getCodemp();
