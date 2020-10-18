@@ -1,6 +1,6 @@
 package com.ti.erpws.logistica.entity;
 
-import com.ti.erpws.logistica.model.response.LogCatalogoVO;
+import com.ti.erpws.logistica.model.LogCatalogoVO;
 import com.ti.erpws.publica.entity.PubEmpresas;
 
 import javax.persistence.*;

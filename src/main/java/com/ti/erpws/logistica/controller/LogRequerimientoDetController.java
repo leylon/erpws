@@ -1,10 +1,7 @@
 package com.ti.erpws.logistica.controller;
 
-import com.ti.erpws.logistica.entity.LogCatalogo;
 import com.ti.erpws.logistica.entity.LogRequerimientoDet;
-import com.ti.erpws.logistica.model.response.LogCatalogoVO;
-import com.ti.erpws.logistica.model.response.LogRequerimientoDetVO;
-import com.ti.erpws.logistica.service.LogCatalogoService;
+import com.ti.erpws.logistica.model.LogRequerimientoDetVO;
 import com.ti.erpws.logistica.service.LogRequerimientoDetService;
 import com.ti.erpws.publica.model.response.EstadosResponse;
 import com.ti.erpws.publica.util.PublicaCrudMulti;

@@ -1,11 +1,8 @@
 package com.ti.erpws.logistica.controller;
 
 import com.ti.erpws.logistica.entity.LogCatalogo;
-import com.ti.erpws.logistica.entity.LogTipoCatalogo;
-import com.ti.erpws.logistica.model.response.LogCatalogoVO;
-import com.ti.erpws.logistica.model.response.LogTipoCatalogoVO;
+import com.ti.erpws.logistica.model.LogCatalogoVO;
 import com.ti.erpws.logistica.service.LogCatalogoService;
-import com.ti.erpws.logistica.service.LogTipoCatalogoService;
 import com.ti.erpws.publica.model.response.EstadosResponse;
 import com.ti.erpws.publica.util.PublicaCrudMulti;
 import io.swagger.annotations.Api;

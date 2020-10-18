@@ -1,6 +1,6 @@
 package com.ti.erpws.logistica.entity;
 
-import com.ti.erpws.logistica.model.response.LogRequerimientoDetVO;
+import com.ti.erpws.logistica.model.LogRequerimientoDetVO;
 
 import javax.persistence.*;
 import java.io.Serializable;

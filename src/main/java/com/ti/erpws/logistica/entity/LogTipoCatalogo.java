@@ -6,7 +6,7 @@
 package com.ti.erpws.logistica.entity;
 
 import com.sun.istack.NotNull;
-import com.ti.erpws.logistica.model.response.LogTipoCatalogoVO;
+import com.ti.erpws.logistica.model.LogTipoCatalogoVO;
 
 
 import javax.persistence.*;

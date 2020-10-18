@@ -1,7 +1,7 @@
 package com.ti.erpws.logistica.controller;
 
 import com.ti.erpws.logistica.entity.LogTipoCatalogo;
-import com.ti.erpws.logistica.model.response.LogTipoCatalogoVO;
+import com.ti.erpws.logistica.model.LogTipoCatalogoVO;
 import com.ti.erpws.logistica.service.LogTipoCatalogoService;
 import com.ti.erpws.publica.model.response.EstadosResponse;
 import com.ti.erpws.publica.util.PublicaCrudMulti;

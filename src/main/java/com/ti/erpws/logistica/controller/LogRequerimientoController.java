@@ -1,10 +1,11 @@
 package com.ti.erpws.logistica.controller;
 
-import com.ti.erpws.logistica.entity.LogCatalogo;
 import com.ti.erpws.logistica.entity.LogRequerimiento;
-import com.ti.erpws.logistica.model.response.LogCatalogoVO;
-import com.ti.erpws.logistica.model.response.LogRequerimientoVO;
-import com.ti.erpws.logistica.service.LogCatalogoService;
+import com.ti.erpws.logistica.model.LogRequerimientoVO;
+import com.ti.erpws.logistica.model.request.ReqAprobRequest;
+import com.ti.erpws.logistica.model.request.ReqPendRequest;
+import com.ti.erpws.logistica.model.response.ReqAprobResponse;
+import com.ti.erpws.logistica.model.response.ReqPendResponse;
 import com.ti.erpws.logistica.service.LogRequerimientoService;
 import com.ti.erpws.publica.model.response.EstadosResponse;
 import com.ti.erpws.publica.util.PublicaCrudMulti;
@@ -21,7 +22,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/webresources/logistica/LogRequerimiento/")
-@Api(tags="Logistica-LogRequerimiento")
+@Api(tags = "Logistica-LogRequerimiento")
 public class LogRequerimientoController implements PublicaCrudMulti<LogRequerimientoVO, EstadosResponse> {
 
     @Autowired
@@ -66,5 +67,19 @@ public class LogRequerimientoController implements PublicaCrudMulti<LogRequerimi
         List<LogRequerimientoVO> data = new ArrayList<>();
         service.listartodo().forEach(entity -> data.add(new LogRequerimientoVO(entity)));
         return data;
+    }
+
+    @PostMapping("/ListarLogRequerimientoPendiente")
+    @ApiOperation(value = "Listar LogRequerimientoPendiente", notes = "servicio para Listar todos los reguerimiento pendientes de la tabla LogRequerimiento")
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "El servicio respondio correctamente"), @ApiResponse(code = 400, message = "Solicitud Invalida")})
+    public List<ReqPendResponse> ListarLogRequerimientoPendiente(@RequestBody ReqPendRequest request) {
+        return service.listarReqPendientes(request);
+    }
+
+    @PostMapping("/AprobarRequerimiento")
+    @ApiOperation(value = "AprobarRequerimiento", notes = "servicio para aprobar o rechazar requerimientos")
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "El servicio respondio correctamente"), @ApiResponse(code = 400, message = "Solicitud Invalida")})
+    public List<ReqAprobResponse> AprobarRequerimiento(@RequestBody ReqAprobRequest request) {
+        return service.aprobarRequerimiento(request);
     }
 }

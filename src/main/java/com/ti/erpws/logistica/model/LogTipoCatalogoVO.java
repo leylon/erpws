@@ -1,4 +1,4 @@
-package com.ti.erpws.logistica.model.response;
+package com.ti.erpws.logistica.model;
 // Generated 17/04/2019 11:20:35 AM by Hibernate Tools 4.3.1
 
 //import lombok.Data;

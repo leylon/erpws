@@ -1,4 +1,4 @@
-package com.ti.erpws.logistica.model.response;
+package com.ti.erpws.logistica.model;
 
 import com.ti.erpws.logistica.entity.LogCatalogo;
 
