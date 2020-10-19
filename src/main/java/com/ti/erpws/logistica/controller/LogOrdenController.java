@@ -4,6 +4,10 @@ import com.ti.erpws.logistica.entity.LogCatalogo;
 import com.ti.erpws.logistica.entity.LogOrden;
 import com.ti.erpws.logistica.model.LogCatalogoVO;
 import com.ti.erpws.logistica.model.LogOrdenVO;
+import com.ti.erpws.logistica.model.request.OrdenAprobRequest;
+import com.ti.erpws.logistica.model.request.ReqAprobRequest;
+import com.ti.erpws.logistica.model.response.OrdenAprobResponse;
+import com.ti.erpws.logistica.model.response.ReqAprobResponse;
 import com.ti.erpws.logistica.service.LogCatalogoService;
 import com.ti.erpws.logistica.service.LogOrdenService;
 import com.ti.erpws.publica.model.response.EstadosResponse;
@@ -67,4 +71,12 @@ public class LogOrdenController implements PublicaCrudMulti<LogOrdenVO, EstadosR
         service.listartodo().forEach(entity -> data.add(new LogOrdenVO(entity)));
         return data;
     }
+
+    @PostMapping("/AprobarOrden")
+    @ApiOperation(value = "AprobarOrden", notes = "servicio para aprobar o rechazar orden")
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "El servicio respondio correctamente"), @ApiResponse(code = 400, message = "Solicitud Invalida")})
+    public List<OrdenAprobResponse> AprobarOrden(@RequestBody OrdenAprobRequest request) {
+        return service.aprobarOrden(request);
+    }
+
 }
