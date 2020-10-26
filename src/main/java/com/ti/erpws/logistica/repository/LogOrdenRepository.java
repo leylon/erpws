@@ -22,6 +22,11 @@ public interface LogOrdenRepository extends JpaRepository<LogOrden, Serializable
                                        @Param("usuario") String usuario,
                                        @Param("notas") String notas);
 
+    @Query(value = "select * FROM log_listar_ordenes_pend_pr(:empresa, :anio, :usuario, :filtro)", nativeQuery = true)
+    public List<Object[]> listarOrdenesPendientes(@Param("empresa") String empresa,
+                                                  @Param("anio") Integer anio,
+                                                  @Param("usuario") String usuario,
+                                                  @Param("filtro") String filtro);
 
 
 }
